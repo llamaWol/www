@@ -34,8 +34,8 @@
 
 /* Variables */
 :root {
-	/* --yellow: #feee33; */
 	--yellow: #ffcb30;
+	--red: #d6243c;
 
 	--gray0: #454252;
 	--gray1: #6e7680;
@@ -97,6 +97,10 @@ a {
 
 b {
 	color: var(--pink4);
+}
+
+c {
+	font-size: 1.5rem;
 }
 
 body {
@@ -171,9 +175,10 @@ ul .nav-item a i {
 .tooltip {
 	opacity: 0;
 	font-size: .8rem;
+	font-style: italic;
+	font-weight: bold;
 
-	background: var(--gray2);
-	border-radius: 8px;
+	color: var(--gray5);
 	padding: .2em .5em;
 	margin-top: .4rem;
 
@@ -184,4 +189,23 @@ ul .nav-item a i {
 ul .nav-item a i:hover + .tooltip {
 	opacity: 1;
 	transform: translateY(0);
+}
+
+.foot {
+	position: absolute;
+	bottom: 0;
+	display: flex;
+	font-size: 1.5rem;
+	width: 100vw;
+}
+
+.foot > .toe {
+	margin-bottom: 1rem;
+	margin-left: 1rem;
+	color: var(--gray1);
+	transition: 200ms;
+}
+
+.foot > .toe:hover {
+	color: var(--gray5);
 }
