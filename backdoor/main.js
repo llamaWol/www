@@ -1,4 +1,4 @@
-console.log("Joost");
+console.log("よーすと");
 
 //    Colour lemon(s) on click    //
 let lemons = document.querySelectorAll(".fa-lemon");
@@ -12,3 +12,9 @@ for (let i = 0; i < lemons.length; i++) {
 		lemon.classList.add('lemon');
 	});
 }
+
+
+// 		Return to homepage 		//
+document.querySelector(".dir").onclick = function () {
+    location.href = "index.html";
+};

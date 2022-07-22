@@ -95,49 +95,21 @@ a {
 	color: inherit;
 }
 
+b {
+	color: var(--pink4);
+}
+
 body {
 	width: 100vw;
 	height: 100vh;
 	overflow: hidden;
-}
-
-section {
 	position: relative;
 	display: flex;
-	width: 100vw;
-	height: 100vh;
 	padding: 3rem;
 	justify-content: center;
-}
-
-section:nth-of-type(1) {
 	background-color: var(--gray0);
 	align-items: center;
 	color: var(--gray4);
-}
-
-.bar {
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100vw;
-	display: flex;
-	padding: 1rem;
-	/* color: var(--pink4); */
-}
-
-.bar > i {
-	transition: 200ms;
-	font-size: 3rem;
-}
-
-.bar > i:hover {
-	transform: scale(1.1, 1.1);
-}
-
-.bar > h2 {
-	margin-left: 2rem;
-	font-size: 2rem;
 }
 
 .header > h1 {
@@ -148,16 +120,12 @@ section:nth-of-type(1) {
 	color: var(--gray2);
 }
 
-section nav {
+/* Navigation bar */
+nav {
 	position: absolute;
 	top: 0;
 	left: 0;
 	width: 100vw;
-}
-
-/* Navigation bar & footer links */
-nav {
-	position: relative;
 	padding: 1rem;
 }
 
@@ -170,14 +138,14 @@ ul {
 /* Logo styling */
 ul .logo {
 	font-size: 3rem;
-	transition: 300ms ease-out;
+	transition: 400ms ease-out;
 }
 
 ul .logo:hover {
-	transform: scale(1.1, 1.1);
+	transform: scale(1.1, 1.1) rotate(20deg);
 }
 
-ul .title {
+ul .dir {
 	font-size: 2rem;
 	margin-left: 1rem;
 	margin-right: auto;
@@ -217,4 +185,3 @@ ul .nav-item a i:hover + .tooltip {
 	opacity: 1;
 	transform: translateY(0);
 }
-
