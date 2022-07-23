@@ -26,3 +26,17 @@ let logo = document.querySelector(".logo")
 logo.onclick = () => {
 	logo.src = "assets/coolcup.png"
 }
+
+
+let pipe = document.querySelector(".pipe")
+let sh = document.querySelector(".shell")
+let c = 1
+
+pipe.onclick = () => {
+	if (c >= 8) {
+		sh.style.animation = "smash 3500ms steps(8, jump-none) forwards"
+	}
+	else {
+		c++
+	}
+}

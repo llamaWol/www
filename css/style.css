@@ -81,6 +81,9 @@ body {
   transition: 0.5s ease-in-out;
   transform: translateY(-0.4rem);
 }
+.head li .logo:hover {
+  transform: translateY(-0.2rem);
+}
 .head .dir {
   display: flex;
   align-items: center;
@@ -133,6 +136,20 @@ body {
   color: #859499;
 }
 
+.egg {
+  position: absolute;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.egg .pipe {
+  z-index: 1;
+}
+.egg .shell {
+  transform: translateY(144px);
+}
+
 .foot {
   list-style: none;
   display: flex;
@@ -150,6 +167,15 @@ body {
 }
 .foot .toe:hover {
   color: #ffffe0;
+}
+
+@keyframes smash {
+  0%, 100% {
+    transform: translateY(144px);
+  }
+  40%, 60% {
+    transform: translateY(66px);
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

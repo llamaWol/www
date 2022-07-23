@@ -112,6 +112,9 @@ body
 			transition: .5s ease-in-out
 			transform: translateY(-.4rem)
 
+		.logo:hover 
+			transform: translateY(-.2rem)
+
 	.dir
 		display: flex 
 		align-items: center
@@ -166,6 +169,22 @@ body
 	p 
 		color: $gray2
 
+
+.egg 
+	position: absolute
+	bottom: 0
+	display: flex 
+	flex-direction: column 
+	align-items: center
+
+	.pipe
+		z-index: 1
+
+	.shell
+		transform: translateY(144px)
+		// animation: smash 4s steps(8, jump-none) forwards
+
+
 .foot
 	list-style: none
 	display: flex
@@ -183,3 +202,10 @@ body
 
 	.toe:hover
 		color: $gray5
+
+
+@keyframes smash 
+	0%, 100%
+		transform: translateY(144px)
+	40%, 60%
+		transform: translateY(66px)
