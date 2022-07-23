@@ -22,19 +22,7 @@ document.querySelector(".dir").onclick = function () {
 
 // 		Change logo on click 	//
 let logo = document.querySelector(".logo")
-var counter = 0;
 
 logo.onclick = () => {
-	if (counter == 0) {
-		logo.src = "assets/coolcup.png"
-		counter++
-	}
-	else if (counter == 1) {
-		logo.src = "assets/duccup.png"
-		counter++
-	}
-	else {
-		logo.src = "assets/cup.png"
-		counter = 0
-	}
+	logo.src = "assets/coolcup.png"
 }
