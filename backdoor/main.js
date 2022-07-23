@@ -18,3 +18,23 @@ for (let i = 0; i < lemons.length; i++) {
 document.querySelector(".dir").onclick = function () {
     location.href = "index.html";
 };
+
+
+// 		Change logo on click 	//
+let logo = document.querySelector(".logo")
+var counter = 0;
+
+logo.onclick = () => {
+	if (counter == 0) {
+		logo.src = "assets/coolcup.png"
+		counter++
+	}
+	else if (counter == 1) {
+		logo.src = "assets/duccup.png"
+		counter++
+	}
+	else {
+		logo.src = "assets/cup.png"
+		counter = 0
+	}
+}
