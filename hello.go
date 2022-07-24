@@ -7,41 +7,38 @@ import (
 	"net/http"
 )
 
-const port = ":3000"
-
-func main() {
+func Handler(w http.ResponseWriter, r *http.Request) {
 	tmpl, err := template.ParseGlob("pages/*")
 	if err != nil {
 		panic(err.Error())
 		return
 	}
+	err = tmpl.ExecuteTemplate(w, r.URL.Path[1:], r.URL.Path[1:])
+	if err != nil {
+		http.Error(w, fmt.Sprintf("Couldnt find page ?? %s", r.URL.Path[1:]), http.StatusInternalServerError)
+	}
+}
 
+func main() {
 	mux := http.NewServeMux()
 	fs := http.FileServer(http.Dir("./backdoor"))
 	mux.Handle("/backdoor/", http.StripPrefix("/backdoor/", fs))
 
+	// Redirect to homepage if page would return 404
 	mux.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
-		err = tmpl.ExecuteTemplate(w, "home", nil)
-		if err != nil {
-			http.Error(w, err.Error(), http.StatusInternalServerError)
-		}
-	})
-	mux.HandleFunc("/about", func(w http.ResponseWriter, r *http.Request) {
-		err = tmpl.ExecuteTemplate(w, r.URL.Path[1:], nil)
-		if err != nil {
-			http.Error(w, err.Error(), http.StatusInternalServerError)
-		}
-	})
-	mux.HandleFunc("/contact", func(w http.ResponseWriter, r *http.Request) {
-		err = tmpl.ExecuteTemplate(w, r.URL.Path[1:], nil)
-		if err != nil {
-			http.Error(w, err.Error(), http.StatusInternalServerError)
-		}
-	})
-	mux.HandleFunc("/egg", func(w http.ResponseWriter, r *http.Request) {
-		w.Write([]byte("Hello there\nWhat are you doing here?"))
+		http.Redirect(w, r, "/home", http.StatusSeeOther)
 	})
 
-	fmt.Printf("Listening on port %s\n", port)
-	log.Fatal(http.ListenAndServe(port, mux))
+	mux.HandleFunc("/home", Handler)
+	mux.HandleFunc("/about", Handler)
+	mux.HandleFunc("/contact", Handler)
+	mux.HandleFunc("/hello", Handler)
+
+	// Secret page, don't tell anyone
+	mux.HandleFunc("/egg", func(w http.ResponseWriter, r *http.Request) {
+		w.Write([]byte("Hi there\n\nWhat are you doing here?"))
+	})
+
+	fmt.Println("Listening...")
+	log.Fatal(http.ListenAndServe(":3333", mux))
 }

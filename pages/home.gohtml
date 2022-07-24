@@ -2,19 +2,15 @@
 <!DOCTYPE html>
 <html lang="en">
 
-{{template "_head"}}
+{{template "_head" .}}
 
 <body>
-	{{template "_bar"}}
+	{{template "_bar" .}}
 	<div class="header">
-		<h1>Hi, <br> I'm Joost</h1>
+		<h1>Hi, <br> I'm <b>J</b>oost</h1>
 		<p>I have written "Hello World!" in 18 languages</p>
 	</div>
-	<div class="egg">
-		<img class="shell" src="backdoor/img/b1.png" width="128" height="128">
-		<img class="pipe" src="backdoor/img/pipe.png" width="128" height="128">
-	</div>
-	{{template "_foo"}}
+	{{template "_foo" .}}
 </body>
 
 </html>

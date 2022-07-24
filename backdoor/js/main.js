@@ -16,26 +16,5 @@ for (let i = 0; i < lemons.length; i++) {
 
 // 		Return to homepage 		//
 document.querySelector(".dir").onclick = function () {
-    location.href = "/";
+    location.href = "/home";
 };
-
-
-let pipe = document.querySelector(".pipe")
-let sh = document.querySelector(".shell")
-let c = 1
-
-pipe.addEventListener('click', () => {
-	if (c >= 8) {
-		sh.style.animation = "smash 3500ms steps(8, jump-none) forwards"
-	}
-	else {
-		c++
-	}
-})
-
-let cmt = document.querySelector(".comment")
-
-cmt.addEventListener('click', () => {
-	// cmt.style.display = "none"
-	cmt.innerHTML = '<i class="fa-solid fa-arrow-right-long"></i>'
-})
