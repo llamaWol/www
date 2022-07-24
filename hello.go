@@ -32,7 +32,6 @@ func main() {
 	mux.HandleFunc("/home", Handler)
 	mux.HandleFunc("/about", Handler)
 	mux.HandleFunc("/contact", Handler)
-	mux.HandleFunc("/hello", Handler)
 
 	// Secret page, don't tell anyone
 	mux.HandleFunc("/egg", func(w http.ResponseWriter, r *http.Request) {
