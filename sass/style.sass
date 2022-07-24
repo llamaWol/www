@@ -1,27 +1,27 @@
 // Jetbrains Mono font 
 @font-face
 	font-family: "Jetbrains"
-	src: url("../assets/jb/JetBrainsMono-Regular.ttf") format("truetype")
+	src: url("../fonts/jb/JetBrainsMono-Regular.ttf") format("truetype")
 
 
 // italic 
 @font-face
 	font-family: "Jetbrains"
-	src: url("../assets/jb/JetBrainsMono-Italic.ttf") format("truetype")
+	src: url("../fonts/jb/JetBrainsMono-Italic.ttf") format("truetype")
 	font-style: italic
 
 
 // bold 
 @font-face
 	font-family: "Jetbrains"
-	src: url("../assets/jb/JetBrainsMono-Bold.ttf") format("truetype")
+	src: url("../fonts/jb/JetBrainsMono-Bold.ttf") format("truetype")
 	font-weight: bold
 
 
 // bold + italic 
 @font-face
 	font-family: "Jetbrains"
-	src: url("../assets/jb/JetBrainsMono-Bold-Italic.ttf") format("truetype")
+	src: url("../fonts/jb/JetBrainsMono-Bold-Italic.ttf") format("truetype")
 	font-weight: bold
 	font-style: italic
 
@@ -29,7 +29,7 @@
 // ms98 font 
 @font-face
 	font-family: "ms98"
-	src: url("../assets/ms/ms98.ttf") format("truetype")
+	src: url("../fonts/ms/ms98.ttf") format("truetype")
 
 // Variables
 $yellow: #ffcb30
@@ -97,7 +97,7 @@ body
 	background: $gray0
 	color: $gray4
 
-.head 
+.bar 
 	list-style: none
 	display: flex
 	align-items: center 
@@ -118,17 +118,15 @@ body
 	.dir
 		display: flex 
 		align-items: center
-		margin-left: 1rem
 		margin-right: auto
 		transform: translateY(-.5rem)
+		font-size: 1rem
 
 		#glitch 
 			font-size: 2rem
+			
 
-		#cli
-			font-size: 1rem
-
-	.nav-item
+	.link
 		a 
 			display: flex
 			flex-direction: column
