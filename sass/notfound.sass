@@ -1,0 +1,49 @@
+@use "_defaults.sass" as def
+
+*
+	font-family: "dia"
+
+body
+	background: def.$blue1
+	color: def.$gray5
+
+.fa-ghost
+	position: absolute
+	top: 90%
+	left: 90%
+	font-size: 4rem
+	color: #eb7c93
+	z-index: 999
+	opacity: 0
+
+	&:hover
+		transition-delay: 100ms
+		opacity: .5
+
+.text
+	position: relative
+	margin-bottom: 8%
+
+	h1
+		font-size: 10rem
+
+	h2 
+		font-size: 6rem
+
+	p
+		font-size: 1.5rem
+
+
+.bottom
+	position: absolute
+	bottom: 0
+	display: flex
+	flex-direction: column
+	align-items: center
+	
+	.button
+		margin-bottom: .5rem
+
+	.counter 
+		color: def.$gray4
+		margin-bottom: 2rem

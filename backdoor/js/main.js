@@ -13,8 +13,19 @@ for (let i = 0; i < lemons.length; i++) {
 	});
 }
 
+// 		Epic circle cursor thing	//
+let cursor = document.querySelector('.cursor');
+
+window.addEventListener('mousemove', e => {
+	cursor.style.transform = `translate(${e.clientX}px, ${e.clientY}px)`
+	cursor.style.opacity = "1";
+});
+
+document.body.addEventListener('mouseleave', () => {
+	cursor.style.opacity = "0";
+});
 
 // 		Return to homepage 		//
-document.querySelector(".dir").onclick = function () {
-    location.href = "/home";
-};
+document.querySelector(".dir").addEventListener('click', () => {
+	location.href = "/home"
+})

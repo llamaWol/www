@@ -26,12 +26,17 @@ func main() {
 
 	// Redirect to homepage if page would return 404
 	mux.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
-		http.Redirect(w, r, "/home", http.StatusSeeOther)
+		if r.URL.Path == "/" {
+			http.Redirect(w, r, "/home", http.StatusSeeOther)
+		} else {
+			http.Redirect(w, r, "/notfound", http.StatusSeeOther)
+		}
 	})
 
 	mux.HandleFunc("/home", Handler)
 	mux.HandleFunc("/about", Handler)
 	mux.HandleFunc("/contact", Handler)
+	mux.HandleFunc("/notfound", Handler)
 
 	// Secret page, don't tell anyone
 	mux.HandleFunc("/egg", func(w http.ResponseWriter, r *http.Request) {
